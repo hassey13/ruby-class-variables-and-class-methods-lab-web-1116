@@ -23,18 +23,18 @@ class Song
 
       def self.artist_count
             @@artists.each_with_object({}) do |song_artist,hash|
-                  hash[song_artist] = count_attr(@@artists,song_artist)
+                  hash[song_artist] = count_elements(@@artists,song_artist)
             end
       end
 
       #count total genres
       def self.genre_count
             @@genres.each_with_object({}) do |song_genre,hash|
-                  hash[song_genre] = count_attr(@@genres,song_genre)
+                  hash[song_genre] = count_elements(@@genres,song_genre)
             end
       end
 
-      def self.count_attr(array,element)
+      def self.count_elements(array,element)
             count = 0
             array.each do |el|
                   if element == el
